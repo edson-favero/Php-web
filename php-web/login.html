@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <title>Login</title>
+    <link href="css/index.css" rel="stylesheet" />
+</head>
+
+<body>
+
+<div class="container">
+        <header >
+            <h1> Sistema para construtora</h1>
+        </header>
+
+ <div class="col-2">
+                <a href="index.html" >Página Inicial</a>
+            </div>
+
+            <div class="col-2">
+                <a href="CadObra.html" >Cadastro Obra</a>
+            </div>
+            <div class="col-2">
+                <a href="CadCliente.html" >Cadastro Cliente</a>
+            </div>
+            <div class="col-2">
+                <a href="Caddepartamento.html" >Cadastro Departamento</a>
+            </div>
+            <div class="col-2">
+                <a href="CadFun.html" >Cadastro Funcionário</a>
+            </div>
+            <div class="col-2">
+                <a href="login.html" >Login</a>
+            </div>
+            <div class="col-2">
+                <a href="logout.html" >Logout</a>
+	
+<form id="formLogin" method="POST" action="php\validacao_login.php">
+	<label for="login">Login:</label><br>
+		<input type="text" id="login" name="login"/><br>
+		
+	<label for="senha">Senha:</label><br>
+		<input type="password"id="senha" name="senha"/><br>
+		
+		<input type="reset" value="Limpar Dados"/><br>
+		<input type="submit" value="Entrar"/>
+</form>
+    
+<h1>
+	<a href="index.html">Voltar</a>
+</h1>    
+    
+</body>
+
+</html>
