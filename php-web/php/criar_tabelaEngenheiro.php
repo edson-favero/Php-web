@@ -9,19 +9,18 @@
 	if ($conexao->connect_error)
 		die ("Conexão falhou: " . $conexao->connect_error);
 
-	$sql = "CREATE TABLE departamento (
+	$sql = "CREATE TABLE engenheiro (
 		id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-		nome_departamento VARCHAR(30),
-		id_cliente INT UNSIGNED,
+		nome_engenheiro VARCHAR(30),
+		cra VARCHAR(9),
 		email VARCHAR(30),
-		local_trabalho VARCHAR(30),
-		telefone VARCHAR(30),
-		FOREIGN KEY (id_cliente) REFERENCES cliente (id)
+		data_nascimento Date,
+		sexo VARCHAR(15)
 		)";
 	if ($conexao->query($sql) === TRUE)
-		echo "Tabela departamento criada com sucesso";
+		echo "Tabela engenheiro criada com sucesso";
 	else
-		echo "Erro criando a tabela departamento: " . $conexao->error;
+		echo "Erro criando a tabela engenheiro: " . $conexao->error;
 
 	$conexao->close();
 ?>

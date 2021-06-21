@@ -13,9 +13,9 @@
 		id_obra INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 		nome VARCHAR(30),
 		inicio_obra date NULL DEFAULT NULL,
-        id_depart INT,
-        id_engenheiro INT,
-        id_cliente INT,
+        id_depart INT UNSIGNED,
+        id_engenheiro INT UNSIGNED,
+        id_cliente INT UNSIGNED,
 		FOREIGN KEY (id_depart) REFERENCES departamento (id),
 		FOREIGN KEY (id_engenheiro) REFERENCES engenheiro (id),
 		FOREIGN KEY (id_cliente) REFERENCES cliente (id)
