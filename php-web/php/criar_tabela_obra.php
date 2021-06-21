@@ -13,9 +13,12 @@
 		id_obra INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 		nome VARCHAR(30),
 		inicio_obra date NULL DEFAULT NULL,
-        departemento_nome VARCHAR(30) NULL DEFAULT NULL,
-        nome_engenheiro VARCHAR(30) NULL DEFAULT NULL,
-        nome_cliente VARCHAR(30) NULL DEFAULT NULL
+        id_depart INT,
+        id_engenheiro INT,
+        id_cliente INT,
+		FOREIGN KEY (id_depart) REFERENCES departamento (id),
+		FOREIGN KEY (id_engenheiro) REFERENCES engenheiro (id),
+		FOREIGN KEY (id_cliente) REFERENCES cliente (id)
 
 		)";
 	if ($conexao->query($sql) === TRUE)
