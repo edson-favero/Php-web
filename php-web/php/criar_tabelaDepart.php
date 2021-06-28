@@ -12,11 +12,9 @@
 	$sql = "CREATE TABLE departamento (
 		id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 		nome_departamento VARCHAR(30),
-		id_cliente INT UNSIGNED,
 		email VARCHAR(30),
 		local_trabalho VARCHAR(30),
-		telefone VARCHAR(30),
-		FOREIGN KEY (id_cliente) REFERENCES cliente (id)
+		telefone VARCHAR(30)
 		)";
 	if ($conexao->query($sql) === TRUE)
 		echo "Tabela departamento criada com sucesso";

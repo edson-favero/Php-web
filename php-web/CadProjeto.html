@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 
-
 <head>
     <meta charset="utf-8">
 	<link href="css/index.css" rel="stylesheet" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Cadastro Obra</title>
+
 	 <link rel="icon" href="imagens\icon.png">
+    <title>Cadastro Projeto</title>
+
 </head>
 
 <body>
+
 <header class="cabecalho">
 	<img id="logo" src="imagens\logo.png">
- </header>  
+</header>
    
 
    
@@ -30,7 +32,7 @@
                 </div>
 
                 <div class="col-2">
-                    <a href="CadFun.html" >Cadastro Funcionario</a>
+                    <a href="CadObra.html" >Cadastro Obra</a>
                 </div>
                 <div class="col-2">
                     <a href="CadEnge.html" >Cadastro Engenheiro</a>
@@ -39,50 +41,46 @@
                     <a href="Caddepartamento.html" >Cadastro Departamento</a>
                 </div>
                 <div class="col-2">
-                    <a href="CadCliente.html" >Cadastro Cliente</a>
-                </div>
-                <div class="col-2">
-                    <a href="CadObra.html" >Cadastro Obra</a>
+                    <a href="CadFun.html" >Cadastro Funcionário</a>
                 </div>
                 <div class="col-2">
                     <a href="login.html" >Login</a>
                 </div>
                 <div class="col-2">
                     <a href="logout.html" >Logout</a>
-               
+                
             </div>
 
             <hr>
 
             <h1>
 			<font size="6"> 
-			
-                <form method="POST" action="php\validacao_cadObra.php">
+                <form method="POST" action="php\validacao_cadCliente.php">
                     <div class="form">
-                        <label for="nome" class="">Nome da Projeto: </label>
+                        <label for="nome" class="">Nome do Cliente: </label>
                         <input type="text" class="" id="nome" name="nome">
                         <br>
-						<label for="nome_eng" class="">Valor Obra: </label>
-                        <input type="text" class="" id="valor_obra" name="valor_obra">
+                        <label for="cpf" class="">Cpf: </label>
+                        <input type="text" class="" id="cpf" name="cpf">
                         <br>
-						<label for="nome_fun" class="">Nome dos Funcionarios </label>
-                        <input type="text" class="" id="nome_func" name="nome_func">
+                        <label for="email" class="">Email: </label>
+                        <input type="email" class="" id="email" name="email">
                         <br>
-								
-       
-</font> <br />
+                        <label for="data_nascimento" class="">Data de nascimento: </label>
+                        <input type="date" class="" id="data_nascimento" name="data_nascimento">
+                    </div>
 
 
-                    <button type="submit" >Cadastrar Projeto </button>
+                    <button type="submit" >Cadastrar Cliente </button>
                     <button type="reset" >Limpar dados</button>
                 </form>
 
             </h1>
-
+</font> <br />
             <hr>
 
             <footer>
-                <h6>Desenvolvido por: João Vitor Lopes Ferreira</h6>
+                <h6>Desenvolvido por: Edson Castilho Favero</h6>
 
             </footer>
         </div>

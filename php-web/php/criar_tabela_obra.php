@@ -12,7 +12,6 @@
 	$sql = "CREATE TABLE obra (
 		id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 		nome VARCHAR(30),
-		valor VARCHAR(30),
 		inicio_obra date NULL DEFAULT NULL,
         id_depart INT UNSIGNED,
         id_engenheiro INT UNSIGNED,
