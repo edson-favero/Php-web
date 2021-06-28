@@ -9,17 +9,14 @@
 	if ($conexao->connect_error)
 		die ("Conexão falhou: " . $conexao->connect_error);
 
-	$sql = "CREATE TABLE obra (
+	$sql = "CREATE TABLE projeto (
 		id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 		nome VARCHAR(30),
-		valor VARCHAR(30),
-		inicio_obra date NULL DEFAULT NULL,
-        id_depart INT UNSIGNED,
-        id_engenheiro INT UNSIGNED,
-        id_cliente INT UNSIGNED,
-		FOREIGN KEY (id_depart) REFERENCES departamento (id),
-		FOREIGN KEY (id_engenheiro) REFERENCES engenheiro (id),
-		FOREIGN KEY (id_cliente) REFERENCES cliente (id)
+        id_obra INT UNSIGNED,
+        id_func INT UNSIGNED,
+		FOREIGN KEY (id_obra) REFERENCES obra (id),
+		FOREIGN KEY (id_func) REFERENCES funcionario (id)
+		
 
 		)";
 	if ($conexao->query($sql) === TRUE)
