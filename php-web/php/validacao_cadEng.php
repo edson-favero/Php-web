@@ -1,18 +1,29 @@
 <?php
 	
-	if (empty($_POST['nome']) || empty($_POST['cra']) ||  empty($_POST['data_nascimento']) )
+	if (empty($_POST['nome']) || empty($_POST['cra']) ||  empty($_POST['email']))
 	{
-        if(empty($_POST['sexoM']) && empty($_POST['SexoF']))
-        {
-            echo "Preencher os dados<br>";
-            echo "Você será redirecionado para a página de cadastro.<br>";
-            header ("refresh:5;url=\php-web/CadCliente.html");
-        }
-        else{
-            echo "Cadastro Realizado<br>";
-            echo "Você será redirecionado para a página index.<br>";
-            header ("refresh:5;url=\php-web/index.html");
-        }
+		echo "Preencher os dados<br>";
+		echo "Você será redirecionado para a página de cadastro.<br>";
+		header ("refresh:5;url=../CadEnge.html");
+    }
+    else
+	{
+		if (isset($_POST["idOculto"]))
+		{
+			require_once "model/engenheiro.php";
+			atualizarEngenheiro($_POST["nome"], $_POST["cra"], $_POST["email"], $_POST["idOculto"]);
+			echo "Atualização efetuada com sucesso! <br>";
+		}
+		else
+		{
+			require_once "model/engenheiro.php";
+			inserirEngenheiro($_POST["nome"], $_POST["cra"], $_POST["email"]);
+			echo "Cadastro Realizado<br>";
+		}
 		
+		echo "Você será redirecionado para a página index.<br>";
+		header ("refresh:5;url=../index.html");
 	}
 ?>
+	
+

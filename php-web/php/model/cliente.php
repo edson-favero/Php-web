@@ -1,49 +1,49 @@
 <?php
-	include "./BD/conexaoBD.php";
+	include "C:/xampp/htdocs/Php-web/php-web/php/conexao_mysql.php";
 
-	function inserirCliente($nome_cliete, $cpf, $email, $sexo, $telefone, $data_nascimento)
+	function inserirCliente($nome_cliente, $cpf, $email, $telefone)
 	{
 		global $conexao;
-		$prepara = $conexao->prepare("INSERT INTO cliente (nome_cliente, cpf, email, sexo, telefone, data_nascimento) VALUES (?, ?, ?, ?, ?, ?)");
-		$prepara->bind_param("ssssss", $nome_cliete, $cpf, $email, $sexo, $telefone, $data_nascimento);
+		$prepara = $conexao->prepare("INSERT INTO cliente (id, nome_cliente, cpf, email, telefone) VALUES (?, ?, ?, ?, ?)");
+		$prepara->bind_param("issss", $id, $nome_cliente, $cpf, $email, $telefone);
 		$prepara->execute();	
 	}
 
-	function atualizarAnimal($nome, $peso, $idade, $sexo, $descricao, $historico, $tipo, $status, $id)
+	function atualizarCliente($nome_cliente, $cpf, $email, $telefone, $id)
 	{
 	      global $conexao;
-	      $prepara = $conexao->prepare("UPDATE animal SET nome = ?, peso = ?, idade = ?, sexo = ?, descricao = ?, historico = ?, tipo = ?, status = ? WHERE id = ?");
-	      $prepara->bind_param("sdisssssi", $nome, $peso, $idade, $sexo, $descricao, $historico, $tipo, $status, $id);
+	      $prepara = $conexao->prepare("UPDATE cliente SET nome_cliente = ?, cpf = ?, email = ?, telefone = ? WHERE id = ?");
+	      $prepara->bind_param("ssssi", $nome_cliente, $cpf, $email, $telefone, $id);
 	      $prepara->execute();
 	}
 
-	function excluirAnimal($id)
+	function excluirCliente($id)
 	{
 	      global $conexao;
-	      $prepara = $conexao->prepare("DELETE FROM animal WHERE id = ?");
+	      $prepara = $conexao->prepare("DELETE FROM cliente WHERE id = ?");
 	      $prepara->bind_param("i", $id);
 	      $prepara->execute();
 	}
 
-	function selecionarAnimalId($id)
+	function selecionarClienteId($id)
 	{
 	      global $conexao;
-	      $prepara = $conexao->prepare("SELECT * FROM animal WHERE id = ?");
+	      $prepara = $conexao->prepare("SELECT * FROM cliente WHERE id = ?");
 	      $prepara->bind_param("i", $id);
 	      $prepara->execute();
 	      $resultado = $prepara->get_result();
 	      return $resultado->fetch_object();
 	}
 
-	function selecionarTodosAnimais()
+	function selecionarTodosClientes()
 	{
 	      global $conexao;
-	      $prepara = $conexao->prepare("SELECT * FROM animal");
+	      $prepara = $conexao->prepare("SELECT * FROM cliente");
 	      $prepara->execute();
 	      $resultado = $prepara->get_result();
 	      while($a = $resultado->fetch_object()){
-		  $animais[] = $a;
+		  $clientes[] = $a;
 	      }
-	      return $animais;
+	      return $clientes;
 	}
 ?>

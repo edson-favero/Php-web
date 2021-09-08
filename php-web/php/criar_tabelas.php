@@ -8,11 +8,9 @@
 
     $sql = "CREATE TABLE engenheiro (
 		id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-		nome_engenheiro VARCHAR(30),
-		cra VARCHAR(9),
-		email VARCHAR(30),
-		data_nascimento Date,
-		sexo VARCHAR(15)
+		nome VARCHAR(30),
+		cra VARCHAR(20),
+		email VARCHAR (40)
 		)";
 	if ($conexao->query($sql) === TRUE)
 		echo "Tabela engenheiro criada com sucesso\n";
@@ -30,11 +28,9 @@
 	$sql = "CREATE TABLE cliente (
 		id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 		nome_cliente VARCHAR(30),
-		cpf VARCHAR(15),
+		cpf VARCHAR(30),
 		email VARCHAR(30),
-		data_nascimento Date,
-		telefone VARCHAR(30),
-		sexo VARCHAR(15)
+		telefone VARCHAR(30)
 		)";
 	if ($conexao->query($sql) === TRUE)
 		echo "Tabela cliente criada com sucesso\n";
