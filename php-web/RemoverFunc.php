@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Consultar Projeto</title>
+    <title>Remover Funcionario</title>
     <link href="css/index.css" rel="stylesheet" />
 </head>
 

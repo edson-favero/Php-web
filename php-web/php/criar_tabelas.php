@@ -61,14 +61,12 @@
     
     $sql = "CREATE TABLE funcionario (
 		id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-		nome_funcionario VARCHAR(30),
+		nome VARCHAR(30),
 		cpf VARCHAR(15),
 		email VARCHAR(30),
-		endereco VARCHAR(30),
 		id_depart INT UNSIGNED,
 		data_nascimento Date,
 		telefone VARCHAR(30),
-		sexo VARCHAR(15),
 		FOREIGN KEY (id_depart) REFERENCES departamento (id)
 		)";
 	if ($conexao->query($sql) === TRUE)

@@ -49,30 +49,28 @@
 			</div>
 			
             <form method="POST" action="#">
-			  <label for="obraEscolhida" class="form-label">Escolha qual obra você deseja remover do banco de dados: </label>
-			  <select class="form-select" id="obraEscolhida" name="obraEscolhida">
+			  <label for="projetoEscolhida" class="form-label">Escolha qual projeto você deseja remover do banco de dados: </label>
+			  <select class="form-select" id="projetoEscolhida" name="projetoEscolhida">
 				<?php
-					require_once "C:/xampp/htdocs/Php-web/php-web/php/model/obra.php";
-					$obras = selecionarTodasObras();
-					foreach ($obras as $ad)
+					require_once "C:/xampp/htdocs/Php-web/php-web/php/model/projeto.php";
+					$projetos = selecionarTodasProjetos();
+					foreach ($projetos as $ad)
 					{
-						echo "<option value = $ad->id>Nome da obra: " . $ad->onome . "<br>"
-                         ."Data de inicio: " . $ad->iobra . "<br>"
-                         ."Nome do departamento: " . $ad->dnome . "<br>"
-                         ."Nome do engenheiro: " . $ad->enome . "<br>"
-                         ."Nome do cliente: " . $ad->cnome . "<br>" . "</option>";		
+						echo "<option value = $ad->id>Nome da obra: " . $ad->onome . "<br>".
+                         "<br>"."Nome do funcionario: " ."<br>". $ad->fnome . "<br>"."Nome do projeto: " ."<br>"
+                         . $ad->pnome."<br>"."</option>";		
 					}
 				?>
 			  </select><br>
-			  <button type="submit" class="btn btn-primary">Remover obra </button>
+			  <button type="submit" class="btn btn-primary">Remover projeto </button>
 			</form>
 			
 			<?php
-				if (isset($_POST["obraEscolhida"]))
+				if (isset($_POST["projetoEscolhida"]))
 				{
-					require_once "C:/xampp/htdocs/Php-web/php-web/php/model/obra.php";
-					excluirObra($_POST["obraEscolhida"]);
-					echo "Obra excluída com sucesso do BD!";
+					require_once "C:/xampp/htdocs/Php-web/php-web/php/model/projeto.php";
+					excluirProjeto($_POST["projetoEscolhida"]);
+					echo "Projeto excluída com sucesso do BD!";
 				} 
 			?>
 			

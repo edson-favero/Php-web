@@ -41,7 +41,7 @@
                     <a href="AtualizarCliente.html" >Atualizar Cliente</a>
                 </div>
                 <div class="col-2">
-                    <a href="AtualizarFun.php" >Atualizar Departamento</a>
+                    <a href="AtualizarFun.php" >Atualizar Funcionario</a>
                 </div>
                 <div class="col-2">
                     <a href="login.html" >Login</a>
@@ -55,7 +55,7 @@
 
     <h3>
         <form method="POST" action="#">
-            <label for="obraEscolhida" class="form-label">Escolha qual adoção você deseja atualizar do banco de dados: </label>
+            <label for="obraEscolhida" class="form-label">Escolha qual obra você deseja atualizar do banco de dados: </label>
             <select class="form-select" id="obraEscolhida" name="obraEscolhida">
               <?php
                   require_once "C:/xampp/htdocs/Php-web/php-web/php/model/obra.php";
@@ -120,18 +120,7 @@
 					?>
 			  </select><br>
               
-              <label for="clienteEscolhido" class="form-label">Escolha a qual cliente a obra pertence: </label>
-				<select class="form-select" id="clienteEscolhido" name="clienteEscolhido">
-					<?php
-						require_once "C:/xampp/htdocs/Php-web/php-web/php/model/cliente.php";
-						$cliente = selecionarTodosClientes();
-						foreach ($cliente as $a)
-						{
-							echo "<option value = $a->id>" . $a->nome_cliente . "</option>";	
-						}
-					?>
-			  </select><br>
-
+             
               
               
 

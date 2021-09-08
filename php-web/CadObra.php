@@ -29,9 +29,7 @@
                     <a href="index.html" >Página Inicial</a>
                 </div>
 
-                <div class="col-2">
-                    <a href="CadObra.php" >Cadastro Obra</a>
-                </div>
+                
                 <div class="col-2">
                     <a href="CadEnge.html" >Cadastro Engenheiro</a>
                 </div>
@@ -42,7 +40,10 @@
                     <a href="CadCliente.html" >Cadastro Cliente</a>
                 </div>
                 <div class="col-2">
-                    <a href="CadFun.php" >Cadastro Departamento</a>
+                    <a href="CadFun.php" >Cadastro Funcionario</a>
+                </div>
+                <div class="col-2">
+                    <a href="CadProjeto.php" >Cadastro Projeto</a>
                 </div>
                 <div class="col-2">
                     <a href="login.html" >Login</a>

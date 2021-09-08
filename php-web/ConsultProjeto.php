@@ -25,9 +25,9 @@
                 <div class="col-2">
                     <a href="index.html" >Página Inicial</a>
                 </div>
-				<div class="col-2">
-                <a href="CadProjeto.php" >Cadastro Projeto</a>
-            </div>
+                <div class="col-2">
+                    <a href="CadProjeto.php" >Cadastro Projeto</a>
+                </div>
                 <div class="col-2">
                     <a href="CadObra.php" >Cadastro Obra</a>
                 </div>
@@ -48,32 +48,17 @@
                 </div>
 			</div>
 			
-            <form method="POST" action="#">
-			  <label for="obraEscolhida" class="form-label">Escolha qual obra você deseja remover do banco de dados: </label>
-			  <select class="form-select" id="obraEscolhida" name="obraEscolhida">
-				<?php
-					require_once "C:/xampp/htdocs/Php-web/php-web/php/model/obra.php";
-					$obras = selecionarTodasObras();
-					foreach ($obras as $ad)
-					{
-						echo "<option value = $ad->id>Nome da obra: " . $ad->onome . "<br>"
-                         ."Data de inicio: " . $ad->iobra . "<br>"
-                         ."Nome do departamento: " . $ad->dnome . "<br>"
-                         ."Nome do engenheiro: " . $ad->enome . "<br>"
-                         ."Nome do cliente: " . $ad->cnome . "<br>" . "</option>";		
-					}
-				?>
-			  </select><br>
-			  <button type="submit" class="btn btn-primary">Remover obra </button>
-			</form>
-			
-			<?php
-				if (isset($_POST["obraEscolhida"]))
+            <?php
+				require_once "C:/xampp/htdocs/Php-web/php-web/php/model/projeto.php";
+				$projeto = selecionarTodasProjetos();
+				foreach ($projeto as $ad)
 				{
-					require_once "C:/xampp/htdocs/Php-web/php-web/php/model/obra.php";
-					excluirObra($_POST["obraEscolhida"]);
-					echo "Obra excluída com sucesso do BD!";
-				} 
+					echo "Nome do projeto: " . $ad->pnome . "<br>";
+                    echo "Nome da obra: " . $ad->onome . "<br>";
+                    echo "Nome do funcionario: " . $ad->fnome . "<br>";
+                    echo "<hr>";
+                    
+				}
 			?>
 			
     

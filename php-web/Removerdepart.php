@@ -25,7 +25,9 @@
                 <div class="col-2">
                     <a href="index.html" >Página Inicial</a>
                 </div>
-
+				<div class="col-2">
+                <a href="CadProjeto.php" >Cadastro Projeto</a>
+            </div>
                 <div class="col-2">
                     <a href="CadObra.html" >Cadastro Obra</a>
                 </div>
